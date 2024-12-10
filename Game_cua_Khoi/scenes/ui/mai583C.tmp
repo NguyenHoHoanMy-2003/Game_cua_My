@@ -1,0 +1,299 @@
+[gd_scene load_steps=30 format=3 uid="uid://4tj0qise1som"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_bck1p"]
+[ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://art/tile_0084.png" id="1_uaqd2"]
+[ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://art/tile_0088.png" id="2_tcnoe"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="3_vcouc"]
+[ext_resource type="Texture2D" uid="uid://con6y7mc74c5a" path="res://art/tile_0120.png" id="4_snr5i"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="5_pintp"]
+[ext_resource type="Texture2D" uid="uid://dad6e15gqi70x" path="res://art/Icons_07.png" id="6_5ba2l"]
+[ext_resource type="Texture2D" uid="uid://c24y6l0ivlqp7" path="res://art/tile_0108.png" id="6_6iwyb"]
+[ext_resource type="Texture2D" uid="uid://dyc2hpeysxk1y" path="res://art/a_gate_dungeon.png" id="8_2wy1f"]
+[ext_resource type="Texture2D" uid="uid://hva3iy5hon7a" path="res://art/tile_0089.png" id="10_215im"]
+[ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://art/gold.png" id="10_rgak4"]
+[ext_resource type="Texture2D" uid="uid://djbldcvfo4swr" path="res://art/line.png" id="12_8u0pe"]
+[ext_resource type="Texture2D" uid="uid://br4qq1defjby" path="res://art/a_gate_mine.png" id="12_nmegp"]
+[ext_resource type="Texture2D" uid="uid://cdq25bq44nox0" path="res://art/a1_fix.png" id="12_rdo20"]
+[ext_resource type="Texture2D" uid="uid://dfs8jpmd7onbx" path="res://art/bag.png" id="17_888pw"]
+[ext_resource type="Texture2D" uid="uid://dl3a87y1bxtt8" path="res://art/tile_0096.png" id="18_6a16q"]
+[ext_resource type="Texture2D" uid="uid://bue8imscpldys" path="res://art/tile_0097.png" id="19_mxb32"]
+[ext_resource type="Texture2D" uid="uid://bpgk3uxxwda42" path="res://art/tile_0098.png" id="20_mdefh"]
+[ext_resource type="Texture2D" uid="uid://dc7crere7e7ow" path="res://art/tile_0099.png" id="21_qwvgq"]
+[ext_resource type="Texture2D" uid="uid://dxg7y1wlh86kj" path="res://art/tile_0100.png" id="22_4t1ft"]
+[ext_resource type="Texture2D" uid="uid://b1nj6u7dxl3mh" path="res://art/tile_0085.png" id="23_fw5fg"]
+[ext_resource type="Texture2D" uid="uid://bj3im6egs4wxx" path="res://art/tile_0086.png" id="24_oluuq"]
+
+[sub_resource type="Gradient" id="Gradient_dhdni"]
+colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1kxac"]
+gradient = SubResource("Gradient_dhdni")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_rnxpd"]
+line_spacing = 10.0
+font_size = 8
+shadow_size = 4
+shadow_color = Color(0.54902, 0.443137, 0.376471, 0.333333)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nijjt"]
+line_spacing = 10.0
+font_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_14f3g"]
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdc06"]
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_ijdqj"]
+shadow_size = 2
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bck1p")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_1kxac")
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 70.0
+offset_right = 44.0
+offset_bottom = 117.0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -75.0
+offset_right = -91.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name : "
+label_settings = SubResource("LabelSettings_rnxpd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ID" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 87.0
+offset_top = -2.0
+offset_right = 103.0
+offset_bottom = 12.0
+text = "ID :"
+label_settings = SubResource("LabelSettings_nijjt")
+
+[node name="Line2" type="Sprite2D" parent="."]
+position = Vector2(128, 104.5)
+scale = Vector2(31.8333, 0.1875)
+texture = ExtResource("12_8u0pe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = 10.0
+offset_right = 270.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+text = "Continue"
+
+[node name="NewRun" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+text = "New Run"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+text = "Exit"
+
+[node name="Gold" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(152, 4)
+scale = Vector2(0.55, 0.375)
+texture = ExtResource("10_rgak4")
+
+[node name="A1Fix" type="Sprite2D" parent="."]
+position = Vector2(196, 4)
+scale = Vector2(0.04329, 0.0410959)
+texture = ExtResource("12_rdo20")
+
+[node name="Line" type="Sprite2D" parent="."]
+position = Vector2(128.5, 8.5)
+scale = Vector2(31.9167, 0.1875)
+texture = ExtResource("12_8u0pe")
+
+[node name="Icons07" type="Sprite2D" parent="."]
+position = Vector2(231, 4.00001)
+scale = Vector2(0.273438, 0.242188)
+texture = ExtResource("6_5ba2l")
+
+[node name="Dungeongate" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 11.0
+offset_right = 1356.0
+offset_bottom = 1211.0
+scale = Vector2(0.075, 0.075)
+texture_normal = ExtResource("8_2wy1f")
+
+[node name="Bat" type="Sprite2D" parent="Dungeongate"]
+position = Vector2(306.667, 373.333)
+scale = Vector2(19.1667, 15.8333)
+texture = ExtResource("4_snr5i")
+flip_h = true
+
+[node name="Crab" type="Sprite2D" parent="Dungeongate"]
+position = Vector2(800, 1040)
+scale = Vector2(12.0833, 9.58333)
+texture = ExtResource("5_pintp")
+flip_h = true
+
+[node name="Ghost" type="Sprite2D" parent="Dungeongate"]
+position = Vector2(916.667, 606.667)
+scale = Vector2(15.4167, 12.5)
+texture = ExtResource("6_6iwyb")
+flip_h = true
+
+[node name="Label" type="Label" parent="Dungeongate"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = -13.3333
+offset_right = 747.0
+offset_bottom = 82.6667
+text = "Dungeon"
+label_settings = SubResource("LabelSettings_14f3g")
+
+[node name="Minegate" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 19.0
+offset_right = 266.0
+offset_bottom = 271.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("12_nmegp")
+
+[node name="Assassin" type="Sprite2D" parent="Minegate"]
+position = Vector2(11.4286, 172.857)
+scale = Vector2(5, 4.46429)
+texture = ExtResource("2_tcnoe")
+
+[node name="Warrior" type="Sprite2D" parent="Minegate"]
+position = Vector2(120, 200)
+scale = Vector2(5.17857, 4.82143)
+texture = ExtResource("3_vcouc")
+
+[node name="Wizard" type="Sprite2D" parent="Minegate"]
+position = Vector2(225.714, 180)
+scale = Vector2(5, 4.64286)
+texture = ExtResource("1_uaqd2")
+
+[node name="Label" type="Label" parent="Minegate"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 82.8571
+offset_right = 152.0
+offset_bottom = 111.857
+text = "Mine"
+label_settings = SubResource("LabelSettings_vdc06")
+
+[node name="Chest" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 100.0
+offset_right = 224.0
+offset_bottom = 116.0
+scale = Vector2(2.75, 2.75)
+texture_normal = ExtResource("10_215im")
+
+[node name="Label" type="Label" parent="Chest"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.2
+offset_right = 44.0
+offset_bottom = 28.2
+scale = Vector2(0.2, 0.2)
+text = "Shop
+"
+label_settings = SubResource("LabelSettings_ijdqj")
+
+[node name="bag" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 98.0
+offset_right = 673.0
+offset_bottom = 531.0
+scale = Vector2(0.12, 0.12)
+texture_normal = ExtResource("17_888pw")
+
+[node name="Tile0096" type="Sprite2D" parent="."]
+position = Vector2(150, 115)
+scale = Vector2(1.375, 1.313)
+texture = ExtResource("18_6a16q")
+
+[node name="Tile0097" type="Sprite2D" parent="."]
+position = Vector2(130, 116)
+scale = Vector2(1.375, 1.313)
+texture = ExtResource("19_mxb32")
+
+[node name="Tile0098" type="Sprite2D" parent="."]
+position = Vector2(110, 116)
+scale = Vector2(1.375, 1.313)
+texture = ExtResource("20_mdefh")
+
+[node name="Tile0099" type="Sprite2D" parent="."]
+position = Vector2(98, 133)
+scale = Vector2(1.444, 1.313)
+texture = ExtResource("21_qwvgq")
+
+[node name="Tile0100" type="Sprite2D" parent="."]
+position = Vector2(140, 133)
+scale = Vector2(1.375, 1.313)
+texture = ExtResource("22_4t1ft")
+
+[node name="Tile0085" type="Sprite2D" parent="."]
+position = Vector2(90, 116)
+scale = Vector2(1.375, 1.313)
+texture = ExtResource("23_fw5fg")
+
+[node name="Tile0086" type="Sprite2D" parent="."]
+position = Vector2(119, 133)
+scale = Vector2(1.375, 1.3125)
+texture = ExtResource("24_oluuq")
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

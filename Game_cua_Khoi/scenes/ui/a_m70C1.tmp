@@ -1,0 +1,189 @@
+[gd_scene load_steps=9 format=3 uid="uid://cj05iwfilnlyf"]
+
+[ext_resource type="Texture2D" uid="uid://br4qq1defjby" path="res://art/a_gate_mine.png" id="1_6oyem"]
+[ext_resource type="Script" path="res://scenes/ui/a_mine.gd" id="1_6uexg"]
+[ext_resource type="Texture2D" uid="uid://b1nj6u7dxl3mh" path="res://art/tile_0085.png" id="3_4dfd6"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="4_44jk1"]
+[ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://art/tile_0088.png" id="5_w66gt"]
+
+[sub_resource type="Gradient" id="Gradient_8akt1"]
+colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xqhoq"]
+gradient = SubResource("Gradient_8akt1")
+width = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vgn"]
+
+[node name="AMine" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6uexg")
+
+[node name="BackLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="BackLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_xqhoq")
+
+[node name="return" type="Button" parent="BackLayer"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 19.0
+text = "Leave"
+
+[node name="o" type="CanvasLayer" parent="."]
+
+[node name="rock" type="TextureRect" parent="o"]
+anchors_preset = -1
+anchor_left = 0.675
+anchor_top = 0.301
+anchor_right = 0.675
+anchor_bottom = 0.301
+offset_left = -143.8
+offset_top = -118.344
+offset_right = 144.208
+offset_bottom = 133.656
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(146.702, 119.974)
+texture = ExtResource("1_6oyem")
+stretch_mode = 3
+
+[node name="area2d_1" type="Area2D" parent="o"]
+position = Vector2(110, 20)
+
+[node name="slot1" type="CollisionShape2D" parent="o/area2d_1"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_t7vgn")
+
+[node name="area2d_2" type="Area2D" parent="o"]
+position = Vector2(110, 45)
+
+[node name="slot2" type="CollisionShape2D" parent="o/area2d_2"]
+shape = SubResource("RectangleShape2D_t7vgn")
+
+[node name="area2d_3" type="Area2D" parent="o"]
+position = Vector2(235, 21)
+
+[node name="slot3" type="CollisionShape2D" parent="o/area2d_3"]
+shape = SubResource("RectangleShape2D_t7vgn")
+
+[node name="Area2D" type="Area2D" parent="o"]
+position = Vector2(29, 4)
+
+[node name="4" type="CollisionShape2D" parent="o/Area2D"]
+position = Vector2(206, 43)
+shape = SubResource("RectangleShape2D_t7vgn")
+
+[node name="Area2D2" type="Area2D" parent="o"]
+position = Vector2(10, 3)
+
+[node name="5" type="CollisionShape2D" parent="o/Area2D2"]
+position = Vector2(225, 69)
+shape = SubResource("RectangleShape2D_t7vgn")
+
+[node name="Area2D3" type="Area2D" parent="o"]
+position = Vector2(17, 3)
+
+[node name="6" type="CollisionShape2D" parent="o/Area2D3"]
+position = Vector2(93, 68)
+shape = SubResource("RectangleShape2D_t7vgn")
+
+[node name="char" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="char"]
+offset_left = 100.0
+offset_top = 93.0
+offset_right = 238.0
+offset_bottom = 133.0
+
+[node name="Char1" type="TextureButton" parent="char"]
+offset_left = 109.0
+offset_top = 101.0
+offset_right = 125.0
+offset_bottom = 117.0
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("3_4dfd6")
+
+[node name="Char2" type="TextureButton" parent="char"]
+offset_left = 137.0
+offset_top = 101.0
+offset_right = 153.0
+offset_bottom = 117.0
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("4_44jk1")
+
+[node name="Char3" type="TextureButton" parent="char"]
+offset_left = 166.0
+offset_top = 101.0
+offset_right = 182.0
+offset_bottom = 118.0
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("5_w66gt")
+
+[node name="text" type="CanvasLayer" parent="."]
+
+[node name="Time" type="Label" parent="text"]
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 49.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 7
+text = "Time:"
+
+[node name="EXP" type="Label" parent="text"]
+offset_left = 9.0
+offset_top = 53.0
+offset_right = 49.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 7
+text = "EXP:"
+
+[node name="Gold" type="Label" parent="text"]
+offset_left = 9.0
+offset_top = 76.0
+offset_right = 49.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 7
+text = "Gold:"
+
+[node name="button" type="CanvasLayer" parent="."]
+
+[node name="haigio" type="Button" parent="button"]
+offset_left = 32.0
+offset_top = 31.0
+offset_right = 51.0
+offset_bottom = 42.0
+text = "2h"
+
+[node name="bongio" type="Button" parent="button"]
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 71.0
+offset_bottom = 42.0
+text = "4h"
+
+[node name="saugio" type="Button" parent="button"]
+offset_left = 72.0
+offset_top = 31.0
+offset_right = 91.0
+offset_bottom = 42.0
+text = "6h"
+
+[node name="Submit" type="Button" parent="button"]
+offset_left = 37.0
+offset_top = 110.0
+offset_right = 77.0
+offset_bottom = 124.0
+text = "Submit"

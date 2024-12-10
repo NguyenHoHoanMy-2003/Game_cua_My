@@ -1,0 +1,288 @@
+[gd_scene load_steps=12 format=3 uid="uid://dymmqcpgkbkmr"]
+
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="1_2ar3v"]
+[ext_resource type="Script" path="res://scenes/ui/b_backpack.gd" id="1_dxytm"]
+[ext_resource type="Texture2D" uid="uid://c2xhttrclo1r7" path="res://art/tile_0116.png" id="2_gpykj"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="3_hu0bq"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://art/tile_0101.png" id="4_vaa2y"]
+[ext_resource type="Texture2D" uid="uid://boklhiqs1414d" path="res://art/tile_0115.png" id="5_2tvyc"]
+[ext_resource type="Texture2D" uid="uid://ck1t4hdip6xrl" path="res://art/tile_0119.png" id="6_q8s7g"]
+[ext_resource type="Texture2D" uid="uid://44jbm5bqr4k" path="res://art/tile_0117.png" id="7_w27ki"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="8_1w15v"]
+
+[sub_resource type="Gradient" id="Gradient_8iqug"]
+colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t25vh"]
+gradient = SubResource("Gradient_8iqug")
+width = 50
+
+[node name="BBackpack" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dxytm")
+
+[node name="BackLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="BackLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_t25vh")
+
+[node name="Leave" type="Button" parent="BackLayer"]
+offset_left = 5.0
+offset_top = 124.0
+offset_right = 45.0
+offset_bottom = 138.0
+text = "Leave"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="bigaxe" type="Panel" parent="CanvasLayer"]
+offset_left = 198.0
+offset_top = 16.0
+offset_right = 223.0
+offset_bottom = 46.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/bigaxe"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 21.0
+offset_bottom = 23.0
+texture = ExtResource("1_2ar3v")
+
+[node name="stamina" type="Label" parent="CanvasLayer/bigaxe"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 8.0
+offset_bottom = 9.0
+text = "1
+"
+
+[node name="numer" type="Label" parent="CanvasLayer/bigaxe"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 16.0
+offset_bottom = 39.0
+text = "x2"
+
+[node name="mana" type="Panel" parent="CanvasLayer"]
+offset_left = 82.0
+offset_top = 71.0
+offset_right = 107.0
+offset_bottom = 101.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/mana"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 23.0
+offset_bottom = 24.0
+texture = ExtResource("2_gpykj")
+
+[node name="stamina" type="Label" parent="CanvasLayer/mana"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 8.0
+offset_bottom = 9.0
+text = "1
+"
+
+[node name="numer" type="Label" parent="CanvasLayer/mana"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 16.0
+offset_bottom = 39.0
+text = "x2"
+
+[node name="sword" type="Panel" parent="CanvasLayer"]
+offset_left = 122.0
+offset_top = 16.0
+offset_right = 147.0
+offset_bottom = 46.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/sword"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 23.0
+offset_bottom = 24.0
+texture = ExtResource("3_hu0bq")
+
+[node name="stamina" type="Label" parent="CanvasLayer/sword"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 8.0
+offset_bottom = 9.0
+text = "1
+"
+
+[node name="numer" type="Label" parent="CanvasLayer/sword"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 16.0
+offset_bottom = 39.0
+text = "x2"
+
+[node name="unknow" type="Panel" parent="CanvasLayer"]
+offset_left = 82.0
+offset_top = 16.0
+offset_right = 107.0
+offset_bottom = 46.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/unknow"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 23.0
+offset_bottom = 24.0
+texture = ExtResource("4_vaa2y")
+
+[node name="stamina" type="Label" parent="CanvasLayer/unknow"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 8.0
+offset_bottom = 9.0
+text = "1
+"
+
+[node name="numer" type="Label" parent="CanvasLayer/unknow"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 16.0
+offset_bottom = 39.0
+text = "x2"
+
+[node name="health" type="Panel" parent="CanvasLayer"]
+offset_left = 122.0
+offset_top = 71.0
+offset_right = 147.0
+offset_bottom = 101.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/health"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 23.0
+offset_bottom = 24.0
+texture = ExtResource("5_2tvyc")
+
+[node name="stamina" type="Label" parent="CanvasLayer/health"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 8.0
+offset_bottom = 9.0
+text = "1
+"
+
+[node name="numer" type="Label" parent="CanvasLayer/health"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 16.0
+offset_bottom = 39.0
+text = "x2"
+
+[node name="axe" type="Panel" parent="CanvasLayer"]
+offset_left = 160.0
+offset_top = 16.0
+offset_right = 185.0
+offset_bottom = 46.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/axe"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 21.0
+offset_bottom = 23.0
+texture = ExtResource("6_q8s7g")
+
+[node name="stamina" type="Label" parent="CanvasLayer/axe"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 8.0
+offset_bottom = 9.0
+text = "1
+"
+
+[node name="numer" type="Label" parent="CanvasLayer/axe"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 16.0
+offset_bottom = 39.0
+text = "x2"
+
+[node name="hammer" type="Panel" parent="CanvasLayer"]
+offset_left = 42.0
+offset_top = 71.0
+offset_right = 67.0
+offset_bottom = 101.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/hammer"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 20.0
+offset_bottom = 23.0
+texture = ExtResource("7_w27ki")
+
+[node name="stamina" type="Label" parent="CanvasLayer/hammer"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 8.0
+offset_bottom = 9.0
+text = "1
+"
+
+[node name="numer" type="Label" parent="CanvasLayer/hammer"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 16.0
+offset_bottom = 39.0
+text = "x2"
+
+[node name="shield" type="Panel" parent="CanvasLayer"]
+offset_left = 42.0
+offset_top = 16.0
+offset_right = 67.0
+offset_bottom = 46.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/shield"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 23.0
+offset_bottom = 25.0
+texture = ExtResource("8_1w15v")
+
+[node name="stamina" type="Label" parent="CanvasLayer/shield"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 8.0
+offset_bottom = 9.0
+text = "1
+"
+
+[node name="numer" type="Label" parent="CanvasLayer/shield"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 16.0
+offset_bottom = 39.0
+text = "x2"
+
+[connection signal="pressed" from="BackLayer/Leave" to="." method="_on_leave_pressed"]
